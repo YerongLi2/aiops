@@ -9,6 +9,7 @@ from selenium import webdriver
 import tqdm
 import pandas as pd
 from selenium.webdriver.common.keys import Keys
+import pyvirtualdisplay
 import re
 ns = {'re': 'http://exslt.org/regular-expressions'}
 
@@ -39,6 +40,9 @@ def getAllResolvedPosts(base_url):
 def get_html(url):
     # req = Request(url, headers={'User-Agent' : 'Mozilla/5.0'})
     # response = urlopen(req).read()
+    from pyvirtualdisplay import Display
+    display = Display(visible=0, size=(800, 800))  
+    display.start()
     try:
         driver = webdriver.Firefox()
     except:
@@ -90,7 +94,7 @@ def parse_post(url):
             data.append([divs[i].text, users[i].text.strip(), times[i].text.strip()])
     except:
         print(url)
-    return [url] + data
+    return [url] + [data]
 # url = "https://forums.developer.nvidia.com/t/custom-plugin-retaining-information-in-between-power-cycles/128151"
 # parse_post(url)
 
@@ -111,7 +115,7 @@ for c_url in c_urls:
     urls = getAllResolvedPosts(c_url)
     name = c_url.split('/')[-2]
     data = []
-    for url in tqdm.tqdm(urls[:2]):
+    for url in tqdm.tqdm(urls):
         # print(url)
         # if url[:38] != 'https://forums.developer.nvidia.com/t/': continue
         data.append(parse_post(url))
