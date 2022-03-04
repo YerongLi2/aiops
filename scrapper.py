@@ -2,7 +2,7 @@ from tkinter import E
 from bs4 import BeautifulSoup
 import requests
 import urllib
-urllib.request
+import urllib.request
 import lxml.html
 import time
 from selenium import webdriver
