@@ -39,7 +39,10 @@ def getAllResolvedPosts(base_url):
 def get_html(url):
     # req = Request(url, headers={'User-Agent' : 'Mozilla/5.0'})
     # response = urlopen(req).read()
-    driver = webdriver.Firefox()
+    try:
+        driver = webdriver.Firefox()
+    except:
+        driver = webdriver.Chrome()
     driver.get(url)
     # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     SCROLL_PAUSE_TIME = 3
@@ -108,7 +111,7 @@ for c_url in c_urls:
     urls = getAllResolvedPosts(c_url)
     name = c_url.split('/')[-2]
     data = []
-    for url in tqdm.tqdm(urls):
+    for url in tqdm.tqdm(urls[:2]):
         # print(url)
         # if url[:38] != 'https://forums.developer.nvidia.com/t/': continue
         data.append(parse_post(url))
