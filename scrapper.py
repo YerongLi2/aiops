@@ -40,9 +40,6 @@ def getAllResolvedPosts(base_url):
 def get_html(url):
     # req = Request(url, headers={'User-Agent' : 'Mozilla/5.0'})
     # response = urlopen(req).read()
-    from pyvirtualdisplay import Display
-    display = Display(visible=0, size=(800, 800))  
-    display.start()
     try:
         driver = webdriver.Firefox()
     except:
