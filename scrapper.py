@@ -12,7 +12,8 @@ from selenium.webdriver.common.keys import Keys
 import pyvirtualdisplay
 import re
 ns = {'re': 'http://exslt.org/regular-expressions'}
-
+display = Display(visible=0, size=(800, 600))
+display.start()			
 DEBUG = False
 def getAllResolvedPosts(base_url):
 
@@ -41,9 +42,16 @@ def get_html(url):
     # req = Request(url, headers={'User-Agent' : 'Mozilla/5.0'})
     # response = urlopen(req).read()
     try:
-        driver = webdriver.Firefox()
+    	from selenium.webdriver.firefox.options import Options
+		Options = Options()
+		Options.headless = True
+        driver = webdriver.Firefox(Options)
+
     except:
-        driver = webdriver.Chrome()
+    	from selenium.webdriver.chrome.options import Options
+		Options = Options()
+		Options.headless = True
+        driver = webdriver.Chrome(Options)
     driver.get(url)
     # driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     SCROLL_PAUSE_TIME = 3
