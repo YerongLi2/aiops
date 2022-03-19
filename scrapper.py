@@ -12,8 +12,6 @@ from selenium.webdriver.common.keys import Keys
 import pyvirtualdisplay
 import re
 ns = {'re': 'http://exslt.org/regular-expressions'}
-display = Display(visible=0, size=(800, 600))
-display.start()			
 DEBUG = False
 def getAllResolvedPosts(base_url):
 
