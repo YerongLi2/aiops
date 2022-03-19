@@ -41,9 +41,9 @@ def get_html(url):
 	# response = urlopen(req).read()
 	try:
 		from selenium.webdriver.firefox.options import Options
-		Options = Options()
-		Options.headless = True
-		driver = webdriver.Firefox(Options)
+		option = webdriver.FirefoxOptions()
+		option.add_argument('headless')
+		driver = webdriver.Firefox(option)
 
 	except:
 		from selenium.webdriver.chrome.options import Options
