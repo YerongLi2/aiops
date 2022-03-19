@@ -56,7 +56,7 @@ def get_html(url):
 
 	# Get scroll height
 	last_height = driver.execute_script("return document.body.scrollHeight")
-
+	pbar = tqdm.tqdm()
 	while True:
 		# Scroll down to bottom
 		driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
@@ -70,10 +70,11 @@ def get_html(url):
 			break
 		last_height = new_height
 		if DEBUG : break
-		
+		pbar.update(1)	
 	regex = '[0-9]+$'
 
 	ans = [elem.get_attribute("href") for elem in  driver.find_elements_by_xpath("//a[@href]")]
+	pbar.close()
 	driver.quit()
 	
 	ans = [e for e in ans if e[:38] == 'https://forums.developer.nvidia.com/t/']
