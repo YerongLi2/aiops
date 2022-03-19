@@ -110,6 +110,9 @@ c_urls = [
 	'https://forums.developer.nvidia.com/c/healthcare/clara-holoscan-sdk/320',
 	'https://forums.developer.nvidia.com/c/agx-autonomous-machines/jetson-embedded-systems/70',
 	'https://forums.developer.nvidia.com/c/development-tools/nsight-systems/116',
+	'https://forums.developer.nvidia.com/c/gaming-and-visualization-technologies/apis/opengl/199',
+	'https://forums.developer.nvidia.com/c/accelerated-computing/nvidia-gpu-cloud-ngc-users/docker-and-nvidia-docker/33',
+	'https://forums.developer.nvidia.com/c/accelerated-computing/gpu-accelerated-libraries/12',
 	]
 c_urls = [c_curl + '?solved=yes' for c_curl in c_urls]
 # header = ['url', 'posts']
