@@ -43,7 +43,7 @@ def get_html(url):
 		from selenium.webdriver.firefox.options import Options
 		option = webdriver.FirefoxOptions()
 		option.add_argument('headless')
-		driver = webdriver.Firefox(option)
+		driver = webdriver.Firefox(options=option)
 
 	except:
 		from selenium.webdriver.chrome.options import Options
