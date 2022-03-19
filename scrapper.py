@@ -105,10 +105,10 @@ def parse_post(url):
 c_urls = [
 	# 'https://forums.developer.nvidia.com/c/autonomous-vehicles/drive-agx/57',
 	# 'https://forums.developer.nvidia.com/c/autonomous-vehicles/drive-px2/61',
-	'https://forums.developer.nvidia.com/c/accelerated-computing/cuda/206',
-	'https://forums.developer.nvidia.com/c/accelerated-computing/hpc-compilers/299',
-	'https://forums.developer.nvidia.com/c/physics-simulation/modulus-physics-ml-model-framework/443',
-	'https://forums.developer.nvidia.com/c/healthcare/clara-holoscan-sdk/320',
+	# 'https://forums.developer.nvidia.com/c/accelerated-computing/cuda/206',
+	# 'https://forums.developer.nvidia.com/c/accelerated-computing/hpc-compilers/299',
+	# 'https://forums.developer.nvidia.com/c/physics-simulation/modulus-physics-ml-model-framework/443',
+	# 'https://forums.developer.nvidia.com/c/healthcare/clara-holoscan-sdk/320',
 	'https://forums.developer.nvidia.com/c/agx-autonomous-machines/jetson-embedded-systems/70',
 	'https://forums.developer.nvidia.com/c/development-tools/nsight-systems/116',
 	'https://forums.developer.nvidia.com/c/gaming-and-visualization-technologies/apis/opengl/199',
@@ -119,7 +119,7 @@ c_urls = [c_curl + '?solved=yes' for c_curl in c_urls]
 # header = ['url', 'posts']
 
 # for c_url in c_urls:
-c_urls.reverse()
+# c_urls.reverse()
 for c_url in c_urls:
 	urls = getAllResolvedPosts(c_url)
 	name = c_url.split('/')[-2]
