@@ -52,7 +52,7 @@ def get_html(url):
 		driver = webdriver.Chrome(Options)
 	driver.get(url)
 	# driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-	SCROLL_PAUSE_TIME = 3
+	SCROLL_PAUSE_TIME = 2
 
 	# Get scroll height
 	last_height = driver.execute_script("return document.body.scrollHeight")
