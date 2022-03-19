@@ -104,8 +104,8 @@ def parse_post(url):
 # parse_post(url)
 
 c_urls = [
-    'https://forums.developer.nvidia.com/c/autonomous-vehicles/drive-agx/57',
-    'https://forums.developer.nvidia.com/c/autonomous-vehicles/drive-px2/61',
+    # 'https://forums.developer.nvidia.com/c/autonomous-vehicles/drive-agx/57',
+    # 'https://forums.developer.nvidia.com/c/autonomous-vehicles/drive-px2/61',
     'https://forums.developer.nvidia.com/c/accelerated-computing/cuda/206',
     'https://forums.developer.nvidia.com/c/accelerated-computing/hpc-compilers/299',
     'https://forums.developer.nvidia.com/c/physics-simulation/modulus-physics-ml-model-framework/443',
