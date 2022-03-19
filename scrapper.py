@@ -119,7 +119,8 @@ c_urls = [c_curl + '?solved=yes' for c_curl in c_urls]
 # header = ['url', 'posts']
 
 # for c_url in c_urls:
-for c_url in c_urls.reverse():
+c_urls.reverse()
+for c_url in c_urls:
 	urls = getAllResolvedPosts(c_url)
 	name = c_url.split('/')[-2]
 	data = []
