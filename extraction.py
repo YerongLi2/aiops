@@ -9,4 +9,4 @@ text = posts[0][0]
 print('text')
 print(text)
 r.extract_keywords_from_text(text)
-print(r.get_ranked_phrases_with_scores)
+print(r.get_ranked_phrases())
