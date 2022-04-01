@@ -1,4 +1,4 @@
-from rake_ntlk import Rake
+from rake_nltk import Rake
 import pandas as pd
 r = Rake()
 
