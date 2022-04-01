@@ -8,5 +8,5 @@ df.url = df.url.apply(lambda x : "/".join(x.split('/')[:6]))
 df.drop_duplicates(['url'], inplace=True)
 url = df.url[0]
 print(url)
-# url = df.url[1]
+url = df.url[1]
 # print(url)
