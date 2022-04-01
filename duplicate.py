@@ -7,4 +7,4 @@ df = pd.read_csv(args.file)
 df.url = df.url.apply(lambda x : "/".join(x.split('/')[:6]))
 df.drop_duplicates(['url'], inplace=True, ignore_index=True)
 
-df.to_csv(args.file)
+df.to_csv(args.file,index=False)
