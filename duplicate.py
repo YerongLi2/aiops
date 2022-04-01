@@ -6,7 +6,5 @@ args = parser.parse_args()
 df = pd.read_csv(args.file)
 df.url = df.url.apply(lambda x : "/".join(x.split('/')[:6]))
 df.drop_duplicates(['url'], inplace=True, ignore_index=True)
-url = df.url[0]
-print(df.url)
-# url = df.url[1]
-# print(url)
+
+df.to_csv(args.file)
