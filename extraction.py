@@ -6,5 +6,7 @@ df = pd.read_csv('cuda.csv')
 posts = eval(df.loc[0].posts)
 text = posts[0][0]
 
+print('text')
 print(text)
-print(r.extract_keywords_from_text(text))
+r.extract_keywords_from_text(text)
+print(r.get_ranked_phrases())
