@@ -4,5 +4,5 @@ r = Rake()
 
 df = pd.read_csv('cuda.csv')
 posts = eval(df.loc[0].posts)
-
-print(posts)
+text = posts[0][0]
+print(r.extract_keywords_from_text(posts))
