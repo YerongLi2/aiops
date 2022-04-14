@@ -24,4 +24,4 @@ fdup = open('duplicates.txt', 'r')
 for line in fdup:
     if len(line.split(',')) == 2:
 
-        print(line))
+        print(line)
