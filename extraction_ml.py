@@ -23,7 +23,7 @@ try:
         posts = eval(df.iloc[i]['posts'])
         for j in range(len(posts)):
             
-            data = [posts[0][0], posts[1]]
+            data = [posts[0][0], posts[0][1]]
             result = ml.extractors.extract(model_id, data)
             keywords = [item['parsed_value'] for item in result.body[0]['extractions']]
             print(keywords)
