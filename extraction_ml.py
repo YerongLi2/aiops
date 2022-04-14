@@ -31,7 +31,7 @@ try:
                 result = ml.extractors.extract(model_id, data)
                 print('result.body')
                 print(result.body)
-                keywords = [item ['parsed_value'] for item in result.body[0]['extractions']]
+                keywords = [] if result.body[0]['extractions'] is None else [item ['parsed_value'] for item in result.body[0]['extractions']]
                 posts[j][0] = keywords
             except:
                 traceback.print_exc()
