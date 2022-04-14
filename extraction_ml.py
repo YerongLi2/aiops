@@ -3,6 +3,7 @@ import pandas as pd
 import argparse
 import tqdm
 import traceback
+from itertools import chain
 parser = argparse.ArgumentParser()
 parser.add_argument("--file", help = 'Filename')
 
@@ -19,20 +20,24 @@ if 'key' not in df.columns:
     df['key'] = ['0']*df.shape[0]
 
 try:
-    for i in tqdm.tqdm(range(df.shape[0])):
-        if df.iloc[i]['key'] != 0: continue
-        posts = eval(df.iloc[i]['posts'])
-        for j in range(len(posts)):
+    all_data = [[item[0] for item in eval(df.iloc[i]['posts'])]
+        for i in tqdm.tqdm(range(df.shape[0]))]
+    data = list(chain.from_iterable(all_data))
+    print(data[-1])
+    # for i in tqdm.tqdm(range(df.shape[0])):
+    #     if df.iloc[i]['key'] != 0: continue
+    #     posts = eval(df.iloc[i]['posts'])
+    #     for j in range(len(posts)):
             
-            data = [posts[0][0], posts[0][1]]
-            result = ml.extractors.extract(model_id, data)
-            print(result.body)
-            keywords = [item['extractions']['parsed_value'] for item in result.body]
-            print(keywords)
-            sys.exit()
-        # df.at[i, 'key'] = str(posts)
+    #         data = [posts[0][0], posts[1][0]]
+    #         result = ml.extractors.extract(model_id, data)
+    #         print(result.body)
+    #         keywords = [item['extractions']['parsed_value'] for item in result.body]
+    #         print(keywords)
+    #         sys.exit()
+    #     # df.at[i, 'key'] = str(posts)
         
-        raise NotImplemented
+    #     raise NotImplemented
 except:
     traceback.print_exc()
     df.to_csv(args.file, index = False)
