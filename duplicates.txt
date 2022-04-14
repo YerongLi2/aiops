@@ -1,5 +1,5 @@
 drive-agx.csv
-https://forums.developer.nvidia.com/t/resizenearest-layer-get-error-on-deserialize/155276, https://forums.developer.nvidia.com/t/using-bin-file-after-tensorrt-optimization/129330
+https://forums.developer.nvidia.com/t/resizenearest-layer-get-error-on-deserialize/155276,https://forums.developer.nvidia.com/t/using-bin-file-after-tensorrt-optimization/129330
 https://forums.developer.nvidia.com/t/onnx-runtime-for-drive-agx-xavier/145676,https://forums.developer.nvidia.com/t/onnx-runtime-for-drive-px2/145684
 https://forums.developer.nvidia.com/t/cross-compilation-using-boost-library/110663,https://forums.developer.nvidia.com/t/nvros/83775
 https://forums.developer.nvidia.com/t/no-hdmi-signal-from-xavier-a/70602,https://forums.developer.nvidia.com/t/sdkmanager-0-9-9-flash-agx-failed/70088
