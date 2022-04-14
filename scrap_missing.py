@@ -1,5 +1,5 @@
 from scrapper import parse_post
-
+import tqdm
 urls = [
 'https://forums.developer.nvidia.com/t/using-bin-file-after-tensorrt-optimization/129330',
 'https://forums.developer.nvidia.com/t/onnx-runtime-for-drive-agx-xavier/145676',
@@ -15,7 +15,7 @@ urls = [
 'https://forums.developer.nvidia.com/t/can-communication-terminates-using-can-utils-on-px2/52924'
 ]
 data = []
-for url in urls:
+for url in tqdm.tqdm(urls):
     # print(url)
     # if url[:38] != 'https://forums.developer.nvidia.com/t/': continue
     data.append(parse_post(url))
