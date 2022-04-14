@@ -9,9 +9,9 @@ parser.add_argument("--file", help = 'Filename')
 
 
 # ml = MonkeyLearn('7cfbdb347b316cb465185868e4ec75e145ddb7b4') # yerongli.ads
-# ml = MonkeyLearn('2fdd3e3c7aad8699d5ebb6f54c7b445e1f19b0a6') # yerongli.shop1
+ml = MonkeyLearn('2fdd3e3c7aad8699d5ebb6f54c7b445e1f19b0a6') # yerongli.shop1
 # ml = MonkeyLearn('b63939e6d125a3dd15a4774db5c3a59d02d90d65') # yerongli.shop2
-ml = MonkeyLearn('19106afaf182bb1b2a24aadceeab51e7adb1dbfa') # yerongli.shop3
+# ml = MonkeyLearn('19106afaf182bb1b2a24aadceeab51e7adb1dbfa') # yerongli.shop3
 model_id = 'ex_YCya9nrn'
 
 args = parser.parse_args()
