@@ -25,7 +25,7 @@ try:
             post = posts[i][0]
             # print(post)
 
-        throw NotImplemented
+        raise NotImplemented
         # result = ml.extractors.extract(model_id, data)
         # print(result.body)
 except:
