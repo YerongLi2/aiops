@@ -14,7 +14,6 @@ model_id = 'ex_YCya9nrn'
 args = parser.parse_args()
 df = pd.read_csv(args.file)
 
-print(df.shape)
 if 'key' not in df.columns:
     df['key'] = ['']*df.shape[0]
 
