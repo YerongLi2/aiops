@@ -31,7 +31,10 @@ try:
             continue
             resume = True
         posts = eval(df.iloc[i]['posts'])
-        if resume: print('\n', end ='\r')
+        if resume: 
+            print('\n', end ='\r')
+            resume = False
+        try: 
         for j in range(len(posts)):
             try :
                 data = [posts[j][0]]
