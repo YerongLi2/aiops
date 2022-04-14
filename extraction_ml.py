@@ -31,7 +31,6 @@ try:
         
         raise NotImplemented
 except:
-    df[]
     traceback.print_exc()
     df.to_csv(args.file)
     print('Saved to ' + args.file)
