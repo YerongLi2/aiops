@@ -1,6 +1,7 @@
 from monkeylearn import MonkeyLearn
 import pandas as pd
 import argparse
+import sys
 parser = argparse.ArgumentParser()
 parser.add_argument("--file", help = 'Filename')
 
@@ -15,5 +16,8 @@ df = pd.read_csv(args.file)
 if 'key' not in df.columns:
     df['key'] = [[]*df.shape[0]]
 
-    result = ml.extractors.extract(model_id, data)
-    print(result.body)
+for i in range(df.shape[0]):
+    print(df.iloc['post'])
+    sys.exit()
+    # result = ml.extractors.extract(model_id, data)
+    # print(result.body)
