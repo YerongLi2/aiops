@@ -20,7 +20,9 @@ if 'key' not in df.columns:
 alldata = df.values.tolist()
 try:
     for i in tqdm.tqdm(range(df.shape[0])):
-        if df.iloc[i]['key'] != 0: continue
+        if df.iloc[i]['key'] != 0: 
+            print(f'skipped {i}')
+            continue
         posts = eval(df.iloc[i]['posts'])
         for j in range(len(posts)):
             data = [posts[j][0]]
