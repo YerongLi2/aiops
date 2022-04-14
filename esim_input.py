@@ -13,6 +13,6 @@ args = parser.parse_args()
 for filename in filenames:
     df = pd.read_csv(filename)
     data = df['key'].values.tolist()
-    data = itertools.chain(*data)
+    data = list(itertools.chain(*data))
     print(data[0])
     print(data[1])
