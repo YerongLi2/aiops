@@ -24,13 +24,15 @@ try:
         posts = eval(df.iloc[i]['posts'])
         for j in range(len(posts)):
             
-            data = posts[j][0]
+            data = [posts[0][0], posts[1]]
             result = ml.extractors.extract(model_id, data)
             keywords = [item['parsed_value'] for item in result.body[0]['extractions']]
+            print(keywords)
+            sys.exit()
         df.at[i, 'key'] = posts
         
         raise NotImplemented
 except:
     traceback.print_exc()
-    df.to_csv(args.file)
-    print('Saved to ' + args.file, index = False)
+    df.to_csv(args.file, index = False)
+    print('Saved to ' + args.file)
