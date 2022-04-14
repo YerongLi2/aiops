@@ -34,7 +34,6 @@ try:
         if resume: 
             print('\n', end ='\r')
             resume = False
-        try: 
         for j in range(len(posts)):
             try :
                 data = [posts[j][0]]
