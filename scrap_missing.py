@@ -1,5 +1,6 @@
 from scrapper import parse_post
 import tqdm
+import pandas as pd
 urls = [
 'https://forums.developer.nvidia.com/t/using-bin-file-after-tensorrt-optimization/129330',
 'https://forums.developer.nvidia.com/t/onnx-runtime-for-drive-agx-xavier/145676',
