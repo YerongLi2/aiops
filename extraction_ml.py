@@ -24,11 +24,11 @@ try:
         posts = eval(df.iloc[i]['posts'])
         for j in range(len(posts)):
             data = [posts[j][0]]
-            # result = ml.extractors.extract(model_id, data)
-            # keywords = [item ['parsed_value'] for item in result.body[0]['extractions']]
-            # posts[j][0] = keywords
+            result = ml.extractors.extract(model_id, data)
+            keywords = [item ['parsed_value'] for item in result.body[0]['extractions']]
+            posts[j][0] = keywords
             
-        alldata[i][2] = "str(posts)"
+        alldata[i][2] = str(posts)
         
         raise NotImplemented
 except:
