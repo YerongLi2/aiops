@@ -29,15 +29,15 @@ try:
             try :
                 data = [posts[j][0]]
                 result = ml.extractors.extract(model_id, data)
-                print('result.body')
-                print(result.body)
+                # print('result.body')
+                # print(result.body)
                 keywords = [] if result.body[0]['extractions'] is None else [item ['parsed_value'] for item in result.body[0]['extractions']]
                 posts[j][0] = keywords
             except:
                 traceback.print_exc()
                 posts = '0'
         alldata[i][2] = str(posts)
-        if posts == '0': raise NotImplemented
+        # if posts == '0': raise NotImplemented
         # raise NotImplemented
 except:
     traceback.print_exc()
