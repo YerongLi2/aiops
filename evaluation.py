@@ -35,7 +35,9 @@ fdup = open('duplicates.txt', 'r')
 for line in fdup:
     if len(line.split(',')) == 2:
         new, old = line.split(',')
-        print(new)
+        if 0 == len(df.get(df['url']==new).key.values.tolist()) :
+            print(new)
+            continue
         new_posts = df.get(df['url']==new).key.values.tolist()[0]
         # old_posts = df.get(df['url']==old).key.values.tolist()[0]
         print(new_posts)
