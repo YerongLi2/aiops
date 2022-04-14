@@ -18,7 +18,7 @@ if 'key' not in df.columns:
     df['key'] = ['']*df.shape[0]
 
 for i in range(df.shape[0]):
-    print(df.iloc[i]['post'])
+    print(df.iloc[i]['posts'])
     sys.exit()
     # result = ml.extractors.extract(model_id, data)
     # print(result.body)
