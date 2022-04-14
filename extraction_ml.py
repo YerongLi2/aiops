@@ -22,6 +22,7 @@ try:
     for i in tqdm.tqdm(range(df.shape[0])):
         if df.iloc[i]['key'] != 0: 
             print(f'skipped {i}')
+            print(df.iloc[i]['key'] )
             continue
         posts = eval(df.iloc[i]['posts'])
         for j in range(len(posts)):
