@@ -30,7 +30,12 @@ df.url = df.url.apply(lambda x : "/".join(x.split('/')[:6]))
 df.drop_duplicates(['url'], inplace=True, ignore_index=True)
 print(df.shape)
 fdup = open('duplicates.txt', 'r')
+
+
 for line in fdup:
     if len(line.split(',')) == 2:
         new, old = line.split(',')
-        print(line)
+        new_posts = df.get(df['url']==new)
+        old_posts = df.get(df['url']==old)
+        print(new)
+        print(old)
