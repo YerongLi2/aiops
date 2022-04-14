@@ -26,7 +26,7 @@ try:
             
             data = posts[j][0]
             result = ml.extractors.extract(model_id, data)
-            keywords = [for item['parsed_value'] for item in result.body[0]['extractions']]
+            keywords = [item['parsed_value'] for item in result.body[0]['extractions']]
         df['key'][i] = posts
         
         raise NotImplemented
