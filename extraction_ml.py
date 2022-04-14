@@ -28,7 +28,7 @@ try:
             # keywords = [item ['parsed_value'] for item in result.body[0]['extractions']]
             # posts[j][0] = keywords
             
-            df.at[i, 'key'] = str(posts)
+            df.at[i, 'key'] = "str(posts)"
         
         raise NotImplemented
 except:
