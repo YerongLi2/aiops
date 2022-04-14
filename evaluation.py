@@ -17,7 +17,11 @@
 # lines = read_time_machine()
 # print(f'
 # print(lines[0])
+from os import linesep
+
+
 fdup = open('duplicates.txt', 'r')
 for line in fdup:
-    if len(line.split(',')) > 2:
-        print(line)
+    if len(line.split(',')) == 2:
+
+        print(line))
