@@ -38,7 +38,7 @@ try:
                 traceback.print_exc()
                 posts = '0'
         alldata[i][2] = str(posts)
-        # if posts == '0': raise NotImplemented
+        if posts == '0': raise NotImplemented
         # raise NotImplemented
 except:
     traceback.print_exc()
