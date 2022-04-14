@@ -25,7 +25,7 @@ for filename in filenames:
     if df is None:
         df = pd.read_csv(filename)
     else:
-        df = pd.concat(df, pd.read_csv(filename))
+        df = pd.concat([df, pd.read_csv(filename)], ignore_index=True)
 print(df.shape)
 fdup = open('duplicates.txt', 'r')
 for line in fdup:
