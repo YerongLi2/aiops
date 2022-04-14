@@ -31,7 +31,13 @@ for filename in filenames:
     data = [item.replace(' ','-') for item in data]
     for item in data:
         flink.write(topic + ' ' + item + '\n')
+        flink.write(item + ' ' + topic + '\n')
         fnode.write('w ' + item + '\n')
         
 fnode.close()
 flink.close()
+
+fpath = open(directory + '/path.dat'  , "w")
+fpath.write('tw 0.3')
+fpath.write('wtw 0.7')
+fpath.close()
