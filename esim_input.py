@@ -17,6 +17,6 @@ for filename in filenames:
     data = [item for item in data if item != 0]
     data = list(itertools.chain(*data))
     data = [item[0] for item in data]
-
-    print(data[0])
-    print(data[1])
+    print(len(set(data)))
+    # print(data[0])
+    # print(data[1])
