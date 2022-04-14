@@ -16,5 +16,7 @@ for filename in filenames:
     data = [eval(item) for item in df['key'].values.tolist()]
     data = [item for item in data if item != 0]
     data = list(itertools.chain(*data))
+    data = [item[0] for item in data]
+
     print(data[0])
     print(data[1])
