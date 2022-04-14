@@ -1,7 +1,19 @@
 from monkeylearn import MonkeyLearn
+import pandas as pd
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--file", help = 'Filename')
+
 
 ml = MonkeyLearn('7cfbdb347b316cb465185868e4ec75e145ddb7b4')
-data = ["I have to say that this hotel has the worst customer support ever. It is a shame that people in management positions (who should be more respectful of their customers) are rude and have bad attitudes. They completely ruined my vacations."]
+data = []
 model_id = 'ex_YCya9nrn'
-result = ml.extractors.extract(model_id, data)
-print(result.body)
+
+args = parser.parse_args()
+df = pd.read_csv(args.file)
+
+if 'key' not in df.columns:
+    df['key'] = [[]*df.shape[0]]
+
+    result = ml.extractors.extract(model_id, data)
+    print(result.body)
