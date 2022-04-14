@@ -28,7 +28,7 @@ try:
             # keywords = [item ['parsed_value'] for item in result.body[0]['extractions']]
             # posts[j][0] = keywords
             
-        alldata[i, 2] = "str(posts)"
+        alldata[i][2] = "str(posts)"
         
         raise NotImplemented
 except:
