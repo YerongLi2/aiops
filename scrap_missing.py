@@ -19,7 +19,6 @@ urls = [
 'https://forums.developer.nvidia.com/t/can-communication-terminates-using-can-utils-on-px2/52924',
 ]
 
-print(urls)
 data = []
 for url in tqdm.tqdm(urls):
     # print(url)
