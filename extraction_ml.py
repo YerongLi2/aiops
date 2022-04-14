@@ -17,7 +17,7 @@ if 'Unnamed: 0' in df.columns: df.drop('Unnamed: 0', 1, inplace=True)
 
 if 'key' not in df.columns:
     df['key'] = ['0']*df.shape[0]
-data = df.values.tolist()
+alldata = df.values.tolist()
 try:
     for i in tqdm.tqdm(range(df.shape[0])):
         if df.iloc[i]['key'] != 0: continue
@@ -28,7 +28,7 @@ try:
             # keywords = [item ['parsed_value'] for item in result.body[0]['extractions']]
             # posts[j][0] = keywords
             
-            data[i, 2] = "str(posts)"
+        alldata[i, 2] = "str(posts)"
         
         raise NotImplemented
 except:
