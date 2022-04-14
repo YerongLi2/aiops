@@ -19,7 +19,8 @@ except:
 fnode = open(directory + '/node.dat'  , "w")
 flink = open(directory + '/link.dat'  , "w")
 for filename in filenames:
-    fnode.write('t ' + filename[:-6] + '\n')
+    topic = filename[:-6]
+    fnode.write('t ' + topic + '\n')
     df = pd.read_csv(filename)
     print(len(df['key'].values.tolist()))
     data = [eval(item) for item in df['key'].values.tolist()]
@@ -29,6 +30,7 @@ for filename in filenames:
     data = sorted(list(set(list(itertools.chain(*data)))))
     data = [item.replace(' ','-') for item in data]
     for item in data:
+        flink.write(topc + ' ' + item + '\n')
         fnode.write('w ' + item + '\n')
         
     
