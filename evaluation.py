@@ -17,9 +17,16 @@
 # lines = read_time_machine()
 # print(f'
 # print(lines[0])
-from os import linesep
-
-
+from os import linesep, pread
+import pandas as pd
+df = None
+filenames = ['drive-px2.csv.1', 'drive-agx.csv.1']
+for filename in filenames:
+    if df is None:
+        df = pd.read_csv(filename)
+    else:
+        df = pd.concat(df, pd.read_csv(filename))
+print(df.shape)
 fdup = open('duplicates.txt', 'r')
 for line in fdup:
     if len(line.split(',')) == 2:
