@@ -15,7 +15,7 @@ urls = [
 'https://forums.developer.nvidia.com/t/can-communication-terminates-using-can-utils-on-px2/52924'
 ]
 data = []
-for url in tqdm.tqdm(urls):
+for url in urls:
     # print(url)
     # if url[:38] != 'https://forums.developer.nvidia.com/t/': continue
     data.append(parse_post(url))
