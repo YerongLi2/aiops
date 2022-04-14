@@ -10,4 +10,5 @@ parser.add_argument("--file", help = 'Filename')
 
 args = parser.parse_args()
 df = pd.read_csv(args.file)
-keywords = [post[0] for post in df.iloc[1]['key']] 
+keywords = [post[0] for post in df.iloc[1]['key']]
+print(keywords)
