@@ -14,7 +14,7 @@ args = parser.parse_args()
 df = pd.read_csv(args.file)
 
 if 'key' not in df.columns:
-    df['key'] = [[]*df.shape[0]]
+    df['key'] = [''*df.shape[0]]
 
 for i in range(df.shape[0]):
     print(df.iloc['post'])
