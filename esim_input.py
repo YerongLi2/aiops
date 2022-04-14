@@ -2,7 +2,7 @@ import pandas as pd
 import argparse
 import tqdm
 import traceback
-from itertools import chain
+import itertools
 parser = argparse.ArgumentParser()
 parser.add_argument("--file", help = 'Filename')
 
@@ -10,4 +10,7 @@ parser.add_argument("--file", help = 'Filename')
 
 args = parser.parse_args()
 df = pd.read_csv(args.file)
-data = df['key'] 
+data = df['key'].values.tolist()
+data = itertools.chain(*data)
+print(data[0])
+print(data10])
