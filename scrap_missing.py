@@ -14,7 +14,7 @@ urls = [
 # 'https://forums.developer.nvidia.com/t/tensorflow-installation-on-drive-px2/72076#5324624'
 # 'https://forums.developer.nvidia.com/t/how-to-test-aurixcan/70979',
 # 'https://forums.developer.nvidia.com/t/can-communication-terminates-using-can-utils-on-px2/52924',
-'ttps://forums.developer.nvidia.com/t/installing-pip-on-drive-px2/73941',
+'https://forums.developer.nvidia.com/t/installing-pip-on-drive-px2/73941',
 ]
 data = []
 for url in tqdm.tqdm(urls):
