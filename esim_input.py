@@ -30,7 +30,8 @@ for filename in filenames:
     data = sorted(list(set(list(itertools.chain(*data)))))
     data = [item.replace(' ','-') for item in data]
     for item in data:
-        flink.write(topc + ' ' + item + '\n')
+        flink.write(topic + ' ' + item + '\n')
         fnode.write('w ' + item + '\n')
         
-    
+fnode.close()
+flink.close()
