@@ -24,9 +24,11 @@ alldata = df.values.tolist()
 try:
     for i in tqdm.tqdm(range(df.shape[0])):
         if df.iloc[i]['key'] != '0' and df.iloc[i]['key'] != 0: 
-            print(f'skipped {i}\n', end='\r')
+            print(f'skipped {i}', end='\r')
             continue
         posts = eval(df.iloc[i]['posts'])
+        print('\n')
+        print('\n', end ='\r')
         for j in range(len(posts)):
             try :
                 data = [posts[j][0]]
