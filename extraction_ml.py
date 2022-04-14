@@ -15,7 +15,7 @@ args = parser.parse_args()
 df = pd.read_csv(args.file)
 
 if 'key' not in df.columns:
-    df['key'] = ['']*df.shape[0]
+    df['key'] = ['0']*df.shape[0]
 
 try:
     for i in tqdm.tqdm(range(df.shape[0])):
