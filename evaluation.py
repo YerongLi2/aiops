@@ -36,7 +36,7 @@ for line in fdup:
     if len(line.split(',')) == 2:
         new, old = line.split(',')
         if 0 == len(df.get(df['url']==new).key.values.tolist()) :
-            print(new)
+            print(old)
             continue
         new_posts = df.get(df['url']==new).key.values.tolist()[0]
         # old_posts = df.get(df['url']==old).key.values.tolist()[0]
