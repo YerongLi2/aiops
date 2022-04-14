@@ -17,13 +17,17 @@ print(df.shape)
 if 'key' not in df.columns:
     df['key'] = ['']*df.shape[0]
 
-for i in range(df.shape[0]):
-    if len(df.iloc[i]['key']) > 0: continue
-    posts = eval(df.iloc[i]['posts'])
-    for i in range(len(posts)):
-        post = posts[i][0]
-        print(post)
+try:
+    for i in range(df.shape[0]):
+        if len(df.iloc[i]['key']) > 0: continue
+        posts = eval(df.iloc[i]['posts'])
+        for i in range(len(posts)):
+            post = posts[i][0]
+            # print(post)
 
-    sys.exit()
-    # result = ml.extractors.extract(model_id, data)
-    # print(result.body)
+        throw NotImplemented
+        # result = ml.extractors.extract(model_id, data)
+        # print(result.body)
+except:
+    df.to_csv(args.file)
+    print('Saved to ' + args.file)
