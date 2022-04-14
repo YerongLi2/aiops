@@ -15,4 +15,4 @@ for filename in filenames:
     data = df['key'].values.tolist()
     data = itertools.chain(*data)
     print(data[0])
-    print(data10])
+    print(data[1])
