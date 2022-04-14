@@ -23,5 +23,5 @@ from os import linesep
 fdup = open('duplicates.txt', 'r')
 for line in fdup:
     if len(line.split(',')) == 2:
-
+        new, old = line.split(',')
         print(line)
