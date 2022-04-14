@@ -30,7 +30,7 @@ try:
             
         alldata[i][2] = str(posts)
         
-        raise NotImplemented
+        # raise NotImplemented
 except:
     traceback.print_exc()
     df = pd.DataFrame(columns=df.columns, data = alldata)
