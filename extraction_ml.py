@@ -21,14 +21,15 @@ if 'Unnamed: 0' in df.columns: df.drop('Unnamed: 0', 1, inplace=True)
 if 'key' not in df.columns:
     df['key'] = ['0']*df.shape[0]
 alldata = df.values.tolist()
+resume = False
 try:
     for i in tqdm.tqdm(range(df.shape[0])):
         if df.iloc[i]['key'] != '0' and df.iloc[i]['key'] != 0: 
             print(f'skipped {i}', end='\r')
             continue
+            resume = True
         posts = eval(df.iloc[i]['posts'])
-        print('\n')
-        print('\n', end ='\r')
+        if resume: print('\n', end ='\r')
         for j in range(len(posts)):
             try :
                 data = [posts[j][0]]
