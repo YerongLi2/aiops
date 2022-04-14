@@ -32,6 +32,7 @@ try:
                 keywords = [item ['parsed_value'] for item in result.body[0]['extractions']]
                 posts[j][0] = keywords
             except:
+                traceback.print_exc()
                 posts = '0'
         alldata[i][2] = str(posts)
         if posts == '0': raise NotImplemented
