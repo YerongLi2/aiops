@@ -101,38 +101,38 @@ def parse_post(url):
 	return [url] + [data]
 # url = "https://forums.developer.nvidia.com/t/custom-plugin-retaining-information-in-between-power-cycles/128151"
 # parse_post(url)
+if __name__ == "__main__":
+	c_urls = [
+		# 'https://forums.developer.nvidia.com/c/autonomous-vehicles/drive-agx/57',
+		# 'https://forums.developer.nvidia.com/c/autonomous-vehicles/drive-px2/61',
+		# 'https://forums.developer.nvidia.com/c/accelerated-computing/cuda/206',
+		# 'https://forums.developer.nvidia.com/c/accelerated-computing/hpc-compilers/299',
+		# 'https://forums.developer.nvidia.com/c/physics-simulation/modulus-physics-ml-model-framework/443',
+		# 'https://forums.developer.nvidia.com/c/healthcare/clara-holoscan-sdk/320',
+		'https://forums.developer.nvidia.com/c/agx-autonomous-machines/jetson-embedded-systems/70',
+		# 'https://forums.developer.nvidia.com/c/development-tools/nsight-systems/116',
+		# 'https://forums.developer.nvidia.com/c/gaming-and-visualization-technologies/apis/opengl/199',
+		# 'https://forums.developer.nvidia.com/c/accelerated-computing/nvidia-gpu-cloud-ngc-users/docker-and-nvidia-docker/33',
+		# 'https://forums.developer.nvidia.com/c/accelerated-computing/gpu-accelerated-libraries/12',
+		]
+	c_urls = [c_curl + '?solved=yes' for c_curl in c_urls]
+	# header = ['url', 'posts']
 
-c_urls = [
-	# 'https://forums.developer.nvidia.com/c/autonomous-vehicles/drive-agx/57',
-	# 'https://forums.developer.nvidia.com/c/autonomous-vehicles/drive-px2/61',
-	# 'https://forums.developer.nvidia.com/c/accelerated-computing/cuda/206',
-	# 'https://forums.developer.nvidia.com/c/accelerated-computing/hpc-compilers/299',
-	# 'https://forums.developer.nvidia.com/c/physics-simulation/modulus-physics-ml-model-framework/443',
-	# 'https://forums.developer.nvidia.com/c/healthcare/clara-holoscan-sdk/320',
-	'https://forums.developer.nvidia.com/c/agx-autonomous-machines/jetson-embedded-systems/70',
-	# 'https://forums.developer.nvidia.com/c/development-tools/nsight-systems/116',
-	# 'https://forums.developer.nvidia.com/c/gaming-and-visualization-technologies/apis/opengl/199',
-	# 'https://forums.developer.nvidia.com/c/accelerated-computing/nvidia-gpu-cloud-ngc-users/docker-and-nvidia-docker/33',
-	# 'https://forums.developer.nvidia.com/c/accelerated-computing/gpu-accelerated-libraries/12',
-	]
-c_urls = [c_curl + '?solved=yes' for c_curl in c_urls]
-# header = ['url', 'posts']
-
-# for c_url in c_urls:
-# c_urls.reverse()
-for c_url in c_urls:
-	urls = getAllResolvedPosts(c_url)
-	name = c_url.split('/')[-2]
-	data = []
-	for url in tqdm.tqdm(urls):
-		# print(url)
-		# if url[:38] != 'https://forums.developer.nvidia.com/t/': continue
-		data.append(parse_post(url))
-	# print(data[0])
-	pd.DataFrame(
-		{
-			'url': [e[0] for e in data],
-			'posts': [e[1] for e in data]
-		}
-	).to_csv(f'{name}.csv',index=False)
-	print(f'{name}.csv saved')  
+	# for c_url in c_urls:
+	# c_urls.reverse()
+	for c_url in c_urls:
+		urls = getAllResolvedPosts(c_url)
+		name = c_url.split('/')[-2]
+		data = []
+		for url in tqdm.tqdm(urls):
+			# print(url)
+			# if url[:38] != 'https://forums.developer.nvidia.com/t/': continue
+			data.append(parse_post(url))
+		# print(data[0])
+		pd.DataFrame(
+			{
+				'url': [e[0] for e in data],
+				'posts': [e[1] for e in data]
+			}
+		).to_csv(f'{name}.csv',index=False)
+		print(f'{name}.csv saved')  
