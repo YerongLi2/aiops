@@ -1,7 +1,8 @@
 from monkeylearn import MonkeyLearn
 import pandas as pd
 import argparse
-import sys
+import tqdm
+import traceback
 parser = argparse.ArgumentParser()
 parser.add_argument("--file", help = 'Filename')
 
@@ -18,16 +19,19 @@ if 'key' not in df.columns:
     df['key'] = ['']*df.shape[0]
 
 try:
-    for i in range(df.shape[0]):
+    for i in tqdm.tqdm(range(df.shape[0])):
         if len(df.iloc[i]['key']) > 0: continue
         posts = eval(df.iloc[i]['posts'])
-        for i in range(len(posts)):
-            post = posts[i][0]
-            # print(post)
-
+        for j in range(len(posts)):
+            
+            data = posts[j][0]
+            result = ml.extractors.extract(model_id, data)
+            keywords = [for item['parsed_value'] for item in result.body[0]['extractions']]
+        df['key'][i] = posts
+        
         raise NotImplemented
-        # result = ml.extractors.extract(model_id, data)
-        # print(result.body)
 except:
+    df[]
+    traceback.print_exc()
     df.to_csv(args.file)
     print('Saved to ' + args.file)
