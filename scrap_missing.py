@@ -28,5 +28,3 @@ pd.DataFrame(
     }
 ).to_csv(f'missing.csv',index=False)
 print(f'missing.csv saved') 
-for url in urls:
-    print(parse_post(url))
