@@ -33,4 +33,4 @@ try:
 except:
     traceback.print_exc()
     df.to_csv(args.file)
-    print('Saved to ' + args.file)
+    print('Saved to ' + args.file, index = False)
