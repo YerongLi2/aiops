@@ -13,6 +13,7 @@ model_id = 'ex_YCya9nrn'
 
 args = parser.parse_args()
 df = pd.read_csv(args.file)
+if 'Unnamed: 0' in df.columns: df.drop('Unnamed: 0', 1, inplace=True)
 
 if 'key' not in df.columns:
     df['key'] = ['0']*df.shape[0]
@@ -25,7 +26,7 @@ try:
             
             data = [posts[0][0], posts[0][1]]
             result = ml.extractors.extract(model_id, data)
-            keywords = [item['parsed_value'] for item in result.body[0]['extractions']]
+            keywords = [item['extractions']['parsed_value'] for item in result.body]
             print(keywords)
             sys.exit()
         # df.at[i, 'key'] = str(posts)
