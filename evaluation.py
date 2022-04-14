@@ -40,5 +40,5 @@ for line in fdup:
             continue
         new_posts = df.get(df['url']==new).key.values.tolist()[0]
         # old_posts = df.get(df['url']==old).key.values.tolist()[0]
-        print(new_posts)
+        # print(new_posts)
         # print(old_posts)
