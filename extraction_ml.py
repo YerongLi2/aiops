@@ -33,6 +33,6 @@ try:
         raise NotImplemented
 except:
     traceback.print_exc()
-    df = pd.DataFrame(columns=df.columns, alldata)
+    df = pd.DataFrame(columns=df.columns, data = alldata)
     df.to_csv(args.file, index = False)
     print('Saved to ' + args.file)
