@@ -26,6 +26,8 @@ for filename in filenames:
         df = pd.read_csv(filename)
     else:
         df = pd.concat([df, pd.read_csv(filename)], ignore_index=True)
+df.url = df.url.apply(lambda x : "/".join(x.split('/')[:6]))
+df.drop_duplicates(['url'], inplace=True, ignore_index=True)
 print(df.shape)
 fdup = open('duplicates.txt', 'r')
 for line in fdup:
