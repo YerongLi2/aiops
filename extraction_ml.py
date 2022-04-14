@@ -31,7 +31,7 @@ try:
             
     #         data = [posts[0][0], posts[1][0]]
     result = ml.extractors.extract(model_id, data)
-    #         print(result.body)
+    print(result.body[1])
     keywords = [[item['parsed_value'] for item in post['extractions']] for post in result.body]
     #         print(keywords)
     #         sys.exit()
