@@ -8,7 +8,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--file", help = 'Filename')
 
 
-ml = MonkeyLearn('7cfbdb347b316cb465185868e4ec75e145ddb7b4')
+# ml = MonkeyLearn('7cfbdb347b316cb465185868e4ec75e145ddb7b4') # yerongli.ads
+ml = MonkeyLearn('2fdd3e3c7aad8699d5ebb6f54c7b445e1f19b0a6') # yerongli.shop1
 model_id = 'ex_YCya9nrn'
 
 args = parser.parse_args()
@@ -25,13 +26,15 @@ try:
             continue
         posts = eval(df.iloc[i]['posts'])
         for j in range(len(posts)):
-            data = [posts[j][0]]
-            result = ml.extractors.extract(model_id, data)
-            keywords = [item ['parsed_value'] for item in result.body[0]['extractions']]
-            posts[j][0] = keywords
-            
+            try :
+                data = [posts[j][0]]
+                result = ml.extractors.extract(model_id, data)
+                keywords = [item ['parsed_value'] for item in result.body[0]['extractions']]
+                posts[j][0] = keywords
+            except:
+                posts = '0'
         alldata[i][2] = str(posts)
-        
+        if posts == '0': raise NotImplemented
         # raise NotImplemented
 except:
     traceback.print_exc()
