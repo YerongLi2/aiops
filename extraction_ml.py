@@ -26,6 +26,7 @@ try:
             
             data = [posts[0][0], posts[0][1]]
             result = ml.extractors.extract(model_id, data)
+            print(result.body)
             keywords = [item['extractions']['parsed_value'] for item in result.body]
             print(keywords)
             sys.exit()
